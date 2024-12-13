@@ -18,13 +18,30 @@
         }
         .blinking-cursor {
             font-weight: bold;
-            font-size: 3rem; /* Match cursor size to the font size of the text */
+            font-size: 3rem;
             animation: blink 1s step-end infinite;
             display: inline;
         }
         @keyframes blink {
             50% {
                 opacity: 0;
+            }
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: moveBubble 10s infinite ease-in-out;
+        }
+        @keyframes moveBubble {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-50vh);
+            }
+            100% {
+                transform: translateY(100vh);
             }
         }
     </style>
@@ -38,17 +55,24 @@
                 <a href="#welcome" class="text-gray-700 hover:text-purple-600">Home</a>
                 <a href="#about" class="text-gray-700 hover:text-purple-600">About Me</a>
                 <a href="#projects" class="text-gray-700 hover:text-purple-600">My Projects</a>
+                <a href="#contact" class="text-gray-700 hover:text-purple-600">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Welcome Section -->
-    <section id="welcome" class="h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex items-center text-white">
+    <section id="welcome" class="h-screen bg-gradient-to-r from-purple-500 to-pink-500 relative overflow-hidden flex items-center text-white">
         <div class="container mx-auto text-center">
             <h1 id="typed-text" class="text-5xl font-bold" style="display: inline;"></h1><span class="blinking-cursor">|</span>
             <p class="text-xl mt-4">Exploring Technology, Data Analysis, and Web Development</p>
             <a href="#projects" class="mt-6 inline-block bg-white text-purple-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100">View Projects</a>
         </div>
+        <!-- Moving Bubbles -->
+        <div class="bubble bg-blue-300" style="width: 60px; height: 60px; left: 10%; animation-duration: 8s; animation-delay: 0s;"></div>
+        <div class="bubble bg-purple-300" style="width: 80px; height: 80px; left: 30%; animation-duration: 10s; animation-delay: 2s;"></div>
+        <div class="bubble bg-pink-300" style="width: 50px; height: 50px; left: 50%; animation-duration: 12s; animation-delay: 4s;"></div>
+        <div class="bubble bg-green-300" style="width: 70px; height: 70px; left: 70%; animation-duration: 14s; animation-delay: 6s;"></div>
+        <div class="bubble bg-yellow-300" style="width: 90px; height: 90px; left: 90%; animation-duration: 16s; animation-delay: 8s;"></div>
     </section>
 
     <!-- About Me Section -->
@@ -57,10 +81,12 @@
             <h2 class="text-4xl font-bold text-center text-purple-600 mb-6">About Me</h2>
             <p class="text-gray-700 text-center max-w-2xl mx-auto">
                 Analytical and detail-oriented insurance professional with 8+ years of experience in claims management, process optimization, and fraud detection. I specialize in leveraging data analytics and technology to solve real-world problems, bringing insights to enhance operational efficiency and customer satisfaction. My professional journey has evolved through leadership roles in the insurance industry, where I streamlined workflows, developed fraud detection models, and implemented automation solutions that saved significant time and effort.
-
-Currently pursuing an MBA in Business Analytics, I am combining advanced analytical skills with technical expertise in Python, SQL, and Tableau. Through my projects in cloud computing and LinkedIn Learning, I have honed my ability to deploy scalable, data-driven solutions for practical challenges.
-
-I am passionate about applying this blend of analytical knowledge and technical acumen to drive impactful initiatives, foster collaboration, and deliver innovative solutions in dynamic environments.
+            </p>
+            <p class="text-gray-700 text-center max-w-2xl mx-auto mt-4">
+                Currently pursuing an MBA in Business Analytics, I am combining advanced analytical skills with technical expertise in Python, SQL, and Tableau. Through my projects in cloud computing and LinkedIn Content Generator, I have honed my ability to deploy scalable, data-driven solutions for practical challenges.
+            </p>
+            <p class="text-gray-700 text-center max-w-2xl mx-auto mt-4">
+                I am passionate about applying this blend of analytical knowledge and technical acumen to drive impactful initiatives, foster collaboration, and deliver innovative solutions in dynamic environments.
             </p>
         </div>
     </section>
@@ -86,11 +112,20 @@ I am passionate about applying this blend of analytical knowledge and technical 
                     <p class="text-gray-700 mt-4">
                         A creative tool to generate engaging content ideas for LinkedIn posts.
                     </p>
-                    <a href="https://aamir-haque.github.io/LinkedIn-Ideas-Generator/" class="text-purple-500 hover:underline mt-4 inline-block">
+                    <a href="https://github.com/your-username/linkedin-ideas-generator" class="text-purple-500 hover:underline mt-4 inline-block">
                         View Project
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold text-purple-600 mb-6">Contact</h2>
+            <p class="text-gray-700">Feel free to reach out to me at:</p>
+            <p class="text-gray-800 font-bold mt-2">aamirhaque011@gmail.com</p>
         </div>
     </section>
 
